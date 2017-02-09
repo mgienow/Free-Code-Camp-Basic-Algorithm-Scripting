@@ -31,6 +31,16 @@ function palindrome(str) {
   str=str.toLowerCase();
 
 // remove special characters, leaving only alphanumeric chars, with regex:
+/*The regex explained:
+[]   indicates a number of different characters to be filtered;
+^   means all characters EXCEPT the ones defined in the brackets;
+0-9 means all numerals;
+a-z means all lowercase letters (could also include A-Z as another searc
+    parameter, but since we rendered str.toLowerCase() it's not necessary);
++   is there to indicte that if consecutive special chars are present, they
+    can be removed at one go instead of one at a time;
+g   means global, ie, return all instances not just the first one. 
+*/
   var onlyLetters = str.replace(/[^0-9a-z]+/g, '');
 
 //render the string into an array:
@@ -56,4 +66,4 @@ return false;
 /*The one thing I don't understand going away from this exercise is why onlyLetters
 gets reversed, when I'm assigning a new variable (emordinlap). So in turning
 the array from the original `str` back into a string, it also needs to be reversed
-again so it appears in the original order. */ 
+again so it appears in the original order. */
